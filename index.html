@@ -1,384 +1,1402 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AccioJob launching page</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,400;0,600;0,700;1,400&display=swap");
+body {
+  scroll-behavior: smooth;
+  font-family: "ABeeZee", sans-serif;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+header,
+main {
+  margin: auto;
+  width: 85vw;
+}
+.my-nav {
+  background-color: white;
+  z-index: 100;  
+}
 
-        header {
-            background-color: blue;;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
-        button{
-            color : blue;
-            Background-color:white;
-        }
-        .navbar {
-            background-color: grey;
-            color: white;;
-            padding: 10px;
-            text-align: right;
-        }
-        .course-info {
-        text-align: center;
-        padding: 50px;
-        }
+/*  NAVBAR */
+.nav-n-msg {
+  position: sticky;
+  top: 0px;
+  z-index: 100; 
+}
 
-        .course-info h2 {
-        font-size: 24px;
-        margin-bottom: 20px;
-        }
+.logo-part1 {
+  padding:10px 0px 10px 80px;
+  margin: 0px 4px;
+}
+.logo-part2 {
+  padding: 0px 10px;
+  margin: 0px 4px;
+  border-left: 2px solid #dadada;
+}
 
-        .course-info p {
-        font-size: 16px;
-        margin-bottom: 30px;
-        }
+nav>ul {
 
-        .stats {
-        display: flex;
-        justify-content: center;
-        }
+  margin-bottom: 0;
+  display:flex;
+  align-items:center;
+}
 
-        .stat {
-        margin: 0 20px;
-        }
+nav ul a {
+  
+  margin-bottom: 0;
+  text-decoration: none;
+  color: #4f4f4f;
+}
 
-        .stat h3 {
-        font-size: 24px;
-        font-weight: bold;
-        }
+nav ul li {
+  text-decoration: none;
+  display: block;
+  margin: 5px 13px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.16px;
+  display:flex;
+  align-items:center;
+}
 
-        .stat p {
-        font-size: 16px;
-        }
+.login{
+  background-color: #ffffff;
+  font-style: italic;
+  color:#2F80ED;
+  padding:10px 20px;
+  border:solid 2px #2F80ED;
+  border-radius: 5px;
+  margin-right: 80px;
+}
+.menu-button {
+  display: none;
+}
+.nav-msg {
+  background-color: #2f80ed;
+  height: 25px;
+}
+.nav-msg>p {
+  color: #fff;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.28px;
+  margin-bottom: 0px;
+}
 
-        .next-batch {
-            background-color: #007bff;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            margin: 20px;
-        }
-        .live-classes {
-        text-align: right;
-        background-color: #f2f2f2;
-        padding: 20px;
-        }
+/* HERO SECTION */
 
-        .info {
-        margin-bottom: 20px;
-        }
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center !important;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
 
-        .info h2 {
-        font-size: 24px;
-        margin-bottom: 10px;
-        }
+.hero-sub-sec {
+  gap: 50px;
+}
+.hero-text-part>h1 {
+  color: #2b2f34;
+  font-size: 3.5rem;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.75px;
+}
 
-        .info p {
-        font-size: 16px;
-        margin-bottom: 5px;
-        }
+.hero-text-part>h1>span {
+  color: #2f80ed;
+  text-shadow: -1px 1px 0 #000,
+  1px 1px 0 #000,
+  1px -1px 0 #000,
+  -1px -1px 0 #000;
+  font-size: 100%;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.75px;
+}
 
-        .apply-button {
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-       }
+.hero-text-part>h1>.course{
+  color:black;
+  
+}
 
-       .apply-button:hover {
-       background-color: #0056b3;
-       }
+.hero-text-part>p {
+  color: #595959;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 130%; /* 23.4px */
+  letter-spacing: 0.36px;
+}
 
-       .terms {
-       font-size: 14px;
-       }
-       .course-info {
-            margin-bottom: 20px;
-        }
+.hero-placements {
+  border-radius: 8px;
+  border: 1px solid #e2e2e2;
+  background: #fff;
+  box-shadow: 0px 2px 40px 0px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
 
-        .course-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
+.arrow { 
+  position: absolute;
+  top: -60px;
+  right: -70px;
+  z-index: -1;
+}
 
-        .sub-title {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
+.made-by {
+  border-radius: 23px;
+  background: #fff;
+  box-shadow: 0px 2px 40px 0px rgba(0, 0, 0, 0.12);
+}
+.made-by>p {
+  color: #525252;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  margin-bottom: 0px;
+}
 
-        .details {
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
+/* register card */
+.register-card {
+  min-width: 350px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0px 25px 54px 0px rgba(0, 0, 0, 0.12);
+  padding: 28px 20px 32px 20px;
+  /* gap: 28px; */
+  margin: 0px 20px;
+}
+.card-heading {
+  width: 80%;
+}
+.card-heading>h1 {
+  color: #2b2f34;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.48px;
+}
 
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            margin-right: 10px;
-        }
+.card-heading>p {
+  color: #818d9d;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+}
 
-        .button:hover {
-            background-color: #0056b3;
-        }
+.my-form {
+  width: 100%;
+  border-radius: 8px;
+  background-color: #fafafa;
+  margin-bottom: 20px;
+}
+.my-form>img {
+  margin: 0px 10px;
+}
 
-        .checkbox {
-            margin-right: 5px;
-        }
-        section {
-            padding: 20px;
-            margin: 20px;
-            background-color: #f2f2f2;
-        }
+.my-form input {
+  width: 80%;
+  padding: 12px 6px;
+  font-size: 16px;
+  background-color: transparent;
+  border: none;
+}
+#input1::placeholder {
+  color: #2b2f34;
+  font-weight: 500;
+}
 
-        .partner-info {
-            margin-bottom: 20px;
-        }
+.form-button {
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background: var(--New, linear-gradient(277deg, #992fed 0%, #2f80ed 100%));
+}
+.form-button {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 150%; /* 27px */
+  padding: 14px 0px;
+}
+.form-button:hover {
+  transform: scale(1.025);
+}
 
-        .title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
+.hero-card-footer>p {
+  color: #818d9d;
+  text-align: center;
+  font-weight: 500;
+  font-size: 14px;
+}
+.hero-card-footer>p>span {
+  color: #2f80ed;
+  font-size: 14px;
+  font-weight: 500;
+}
+.hero-card-footer>p>span:hover {
+  transform: scale(1.025);
+  cursor: pointer;
+}
 
-        .partners-list {
-            list-style-type: none;
-            padding: 0;
-        }
+/* OUR COURSES */
+.our-courses{
+  width: 100vw !important;
+  background-color: #ecf8ff;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.courses-card-container{
+  width: 98%;
+  margin: auto;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.section-header-p {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1.28px;
+  text-transform: uppercase;
+  font-style: italic;
+  background: var(--New, linear-gradient(277deg, #992fed 0%, #2f80ed 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.our-courses-header-text>h1 {
+  color: #2f80ed;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: -0.54px;
+}
+.beginer-card {
+  position: relative;
+  border: 2px solid #2f80ed;
+}
 
-        .partners-list li {
-            margin-bottom: 10px;
-        }
+.ideal-choice {
+  position: absolute;
+  z-index: 1;
+  border-radius: 7px;
+  background-color: #2f80ed;
+  top: -19px;
+  color: #fff;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 400;
+  text-transform: uppercase;
+}
 
-        .partner-link {
-            color: #007bff;
-            text-decoration: none;
-        }
+.course-card {
+  width: 38%;
+  height: 540px;
+  min-width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box !important;
+  border-radius: 9px;
+  background-color: #fff;
+  padding: 30px;
+}
 
-        .partner-link:hover {
-            text-decoration: underline;
-        }
+.course-card:hover {
+  transform: scale(1.02) !important;
+  cursor: pointer;
+}
 
-        .button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            text-decoration: none;
-        }
+.course-card div > h1 {
+  color: #2b2f34;
+  font-size: 26px;
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 0px;
+}
 
-        .button:hover {
-            background-color: #0056b3;
-        }
+.course-card-pills>div {
+  display: flex;
+  padding: 6px 15px;
+  align-items: flex-start;
+  gap: 18px;
+  border-radius: 7px;
 
-        .testimonial {
-            margin-bottom: 20px;
-        }
+  font-size: 14px;
+  font-weight: 400;
+}
+.beginer-card .course-card-pills>div {
+  color: #1d78b0;
+  background: #e0f3ff;
+}
 
-        .name {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
+.intermediate-card .course-card-pills>div {
+  color: #965400;
+  background: #ffeed8;
+}
 
-        .position {
-            font-style: italic;
-            margin-bottom: 10px;
-        }
+.course-card-msg > p {
+  color: #565656;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+}
 
-        .quote {
-            font-style: italic;
-        }
-</style>
+.course-card-table {
+  margin: auto !important;
+  width: 95% !important;
+}
 
-</head>
-<body>
-    <div class="navbar">
-        <a href="#">Courses</a>
-        <a href="#">Acciojob Reviews</a>
-        <a href="#">Scholarship Test</a>
-        <a href="#">More</a>
-        <button>
-            <a href="#">Login</a>
-        </button>
-    </div>
-    <div class="announce-bar"><h5 style="color:blue" >Next batch starts in ⌛ 22 Days. Hurry!,</h5>
-    </div>
+.course-card-table>tr {
+  width: 100% !important;
+}
 
+.course-card-table>tr>td {
+  width: 50% !important;
+  color: #2b2f34;
+  font-size: 16px;
+  font-weight: 400;
+  /* text-align: center; */
+  vertical-align: middle;
+  line-height: 200%;
+}
 
-    <section class="course-info">
-        <h2>Launch your career with our <br>Full Stack Developer Courses</h2>
-        <p>Curriculum designed and taught by Alumni from IITs & <br>Leading Tech Companies.</p>
+.last-row>td {
+  border: none !important;
+}
 
-    <button>
-        <div class="stats">
-            <div class="stat">
-                <h3>8.3 LPA</h3>
-                <p>Average Salary</p>
+.button-container {
+  gap: 12px;
+  width: 95%;
+}
+
+.button-container>button {
+  width: 50%;
+  padding: 14px 15px;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 0px;
+}
+
+.hiring-partners-section {
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.hiring-partners-section>h1 {
+  color: #2b2f34;
+  font-size: 42px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 150%; /* 63px */
+  letter-spacing: -0.63px;
+}
+
+.hiring-partners-section>h1>span {
+  color: #2f80ed;
+}
+
+.hiring-partners-section>h5 {
+  color: #595959;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 130%; /* 23.4px */
+  letter-spacing: 0.36px;
+  margin-bottom: 25px;
+}
+
+.companies-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.companies-row>div {
+  height: 70px;
+  width: fit-content;
+  padding: 8px 8px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.report-btn {
+  color: #fff;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 150%;
+  text-align: center;
+  padding: 8px 30px !important;
+}
+
+.feedback {
+  width: 100%;
+  margin: auto !important;
+  padding-top: 40px;
+  padding-bottom: 100px;
+}
+
+.feedback>h1 {
+  color: #2b2f34;
+  text-align: center;
+  font-size: 42px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 150%; /* 63px */
+  letter-spacing: -0.63px;
+}
+.feedback>p {
+  color: #595959;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 23.4px */
+  letter-spacing: 0.36px;
+  margin-bottom: 40px;
+}
+
+.review-box-container {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 15px;
+}
+
+.review-box-col {
+  width: 32%;
+  min-width: 330px;
+  /* margin-inline: 12px; */
+  gap: 24px;
+}
+.review-box {
+  /* margin: 12px; */
+  background-color: white;
+  width: 100%;
+  min-width: 330px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  border-radius: 10px;
+  border: 2px solid #d7d7d7;
+  box-shadow: 5px 9px 40px 0px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.cust-details {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* position: relative; */
+}
+
+.cust-name>h4 {
+  margin-bottom: 0px;
+  color: #000;
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.cust-name>h5 {
+  color: #676767;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.social-link {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+}
+
+.cust-para>p {
+  color: #676767;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  text-align: justify;
+}
+
+.date {
+  color: #676767;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.companies-row>div :hover,
+.review-box:hover,
+.register-card:hover,
+.hero-placements:hover,
+.menu-button:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .review-box-col,
+  .hero-sub-sec,
+  .register-card,
+  .hero-placements {
+    width: 98% !important;
+    margin: auto !important;
+  }
+
+  .courses-card-container,.hero-section {
+    flex-direction: column !important;
+  }
+  .arrow {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 825px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+  .menu-button {
+    display: block !important;
+  }
+  .hero-text-part>h1,.hero-text-part>p {
+    text-align: center !important;
+  }
+}
+    </style>
+  </head>
+
+<!--These classes are just taken as per the contest details-->
+  <body>
+    <!-- NAVBAR -->
+    <div class="nav-n-msg d-flex flex-column vw-100">
+      <nav
+        class="my-nav d-flex align-items-center justify-content-between py-2 px-2"
+      >
+        <div class="navlogo d-flex align-items-center justify-content-center">
+          <div class="d-flex align-items-center justify-content-center">
+            <div class="logo-part1">
+              <img src="https://acciojob.com/src/Navbar/logo.svg" alt="logo" />
             </div>
-            <div class="stat">
-                <h3>100%</h3>
-                <p>Job Guarantee</p>
+            <div class="logo-part2">
+              <img
+                src="./images/navbar/NSDC_Logo_in_clear_background 1.png"
+                alt="NSDC"
+              />
             </div>
-            <div class="stat">
-                <h3>300+</h3>
-                <p>Partner Companies</p>
-            </div>
-            <div class="stat">
-                <h3>41 Lakhs</h3>
-                <p>Highest Salary</p>
-            </div>
+          </div>
         </div>
-    </button>
-    </section>
+        <div
+          class="hide-on-mobile d-flex align-items-center justify-content-center px-4"
+        >
+          <ul class="hide-on-mobile d-flex list-unstyled mx-3">
+            <li class="hide-on-mobile">
+              <a href="#">
+                Courses
+                <i class="fa-solid fa-angle-down" style="color: #4f4f4f"></i
+              ></a>
+            </li>
+            <li class="hide-on-mobile"><a href="#">Acciojob Reviews</a></li>
+            <li class="hide-on-mobile"><a href="#">Scholarship Test</a></li>
+            <li class="hide-on-mobile">
+              <a href="#">
+                More
+                <i class="fa-solid fa-angle-down" style="color: #4f4f4f"></i>
+              </a>
+            </li>
+          </ul>
+          <button class="login"
+            type="menu"
+            class="hide-on-mobile btn btn-outline-primary px-4 mx-3"
+          >
+            <i>Login</i>
+          </button>
+          <div class="menu-button">
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 512 512"
+              height="100%"
+              width="40px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill="none"
+                stroke-linecap="round"
+                stroke-miterlimit="10"
+                stroke-width="48"
+                d="M88 152h336M88 256h336M88 360h336"
+              ></path>
+            </svg>
+          </div>
+        </div>
+      </nav>
+      <div class="nav-msg d-flex align-items-center justify-content-center">
+        <p>Next batch starts in ⌛ 22 Days, Hurry!</p>
+      </div>
+    </div>
 
-    <section>
-        <div class="info">
-            <button>
-                <h1>Start Attending Live<br>Classes for Free!</h1>
-                <h6>Live lectures & Assignments curated by<br>Top Tech Professionals</h6>
-                <p><strong>Samvrant Samantaray</strong></p>
-                <p>Phone number: 123-456-7890</p>
+    <header>
+      <!-- HERO SECTION -->
+      <section class="hero-section">
+        <div
+          class="hero-sub-sec col-7 d-flex flex-column align-items-start justify-content-between"
+        >
+          <div
+            class="hero-text-part d-flex flex-column align-items-start justify-content-between m-2 p-1"
+          >
+            <h1>
+              Launch your career with our
+              <span>Full Stack Developer</span> 
+              <span class="course">Courses</span>
+            </h1>
+            <p>
+              Curriculum designed and taught by Alumni from IIT's &
+              <br />leading Tech Companines.
+            </p>
+            <div
+              class="hero-placements d-flex flex-wrap align-items-center justify-content-start p-2 mb-2"
+            >
+              <div class="px-1 my-1">
+                <img src="./images/hero/Frame 999.svg" alt="highest-ctc" />
+              </div>
+              <div class="px-1 my-1">
+                <img src="./images/hero/Frame 1002.svg" alt="companies" />
+              </div>
+              <div class="px-1 my-1">
+                <img src="./images/hero/Frame 998.svg" alt="gaurantee" />
+              </div>
+              <div class="px-1 my-1">
+                <img src="./images/hero/Frame 1001.svg" alt="avg-ctc" />
+              </div>
+              <div class="arrow">
+                <img src="./images/hero/Arrow.png" alt="arrow" />
+              </div>
+            </div>
+          </div>
+
+          <div class="hide-on-mobile made-by p-1 px-3">
+            <p>Made with 💙 by an AccioJob Student</p>
+          </div>
+        </div>
+
+        <div
+          class="register-card col-4 d-flex flex-column align-items-center justify-content-around"
+        >
+          <div class="card-heading">
+            <h1 class="text-center">Start Attending Live Classes for Free!</h1>
+            <p>Live lectures & Assignments curated by Top Tech Proffesionals</p>
+          </div>
+
+          <div class="my-form d-flex">
+            <img src="./images/hero/person.svg" alt="person" />
+            <input id="input1" type="text" placeholder="Samvrant Samantaray" />
+          </div>
+
+          <div class="my-form d-flex">
+            <img src="./images/hero/Frame (1).svg" alt="contact" />
+            <input type="text" placeholder="Phone Number" />
+          </div>
+
+          <button type="submit" class="form-button my-2">
+            Apply Now For Free
+            <img src="./images/hero/arrow-right.svg" alt="right-arrow" />
+          </button>
+          <div class="hero-card-footer">
+            <p>
+              By clicking ‘Apply now’, you agree to our <br /><span>
+                Terms & Conditions
+              </span>
+            </p>
+          </div>
+        </div>
+      </section>
+    </header>
+    <section class="our-courses vw-100">
+      <div class="our-courses-header-text text-center pb-4">
+        <p class="section-header-p">learn full-stack web development</p>
+        <h1>Our courses</h1>
+      </div>
+
+      <div
+        class="courses-card-container d-flex align-items-center justify-content-center"
+      >
+        <div class="beginer-card course-card mt-3">
+          <div class="ideal-choice p-2">ideal for first time coders</div>
+          <div class="d-flex align-items-center justify-content-center">
+            <img src="./images/our-courses/Sapling Icon.svg" alt="sap" />
+            <h1 class="m-1">Beginer</h1>
+          </div>
+          <div
+            class="course-card-pills d-flex align-items-center justify-content-center my-2"
+          >
+            <div class="mx-2">100% Job Gaurantee</div>
+            <div class="mx-2">Lifetime Access</div>
+          </div>
+          <div class="course-card-msg">
+            <p>For you to start their coding journey from scratch</p>
+          </div>
+
+          <table class="table course-card-table mb-4">
+            <tr>
+              <td>
+                <img
+                  class="me-2"
+                  src="./images/our-courses/suitcase.svg"
+                  alt="suitcase"
+                />
+                Placement Starts
+              </td>
+              <td><i>in 4 Months</i></td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  class="me-2"
+                  src="./images/our-courses/mdi_graduation-cap-outline.svg"
+                  alt="cap"
+                />
+                Eligibility
+              </td>
+              <td><i>Final year students or Graduates, All degrees</i></td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  class="me-2"
+                  src="./images/our-courses/clocke.svg"
+                  alt="clock"
+                />
+                Duration
+              </td>
+              <td><i>12 Months</i></td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  class="me-2"
+                  src="./images/our-courses/diarye.svg"
+                  alt="study"
+                />
+                Daily Effort
+              </td>
+              <td><i>5-7 hours</i></td>
+            </tr>
+            <tr class="last-row">
+              <td>
+                <img
+                  class="me-2"
+                  src="./images/our-courses/material-symbols_skip-next-outline.svg"
+                  alt="play-pause"
+                />
+                Next Batch On
+              </td>
+              <td><i>27th Dec 2022</i></td>
+            </tr>
+          </table>
+
+          <div
+            class="button-container d-flex align-items-center justify-content-center"
+          >
+            <button class="btn btn-outline-primary">
+              <img
+                src="./images/our-courses/downloade.svg"
+                alt="download"
+                class="me-2"
+              />
+              <i>Brochure</i>
             </button>
-            <button class="apply-button">Apply Now For Free</button>
-            <p class="terms">By clicking Apply now you agree to our Terms & Conditions.</p>
+            <button class="btn btn-primary border-0">
+              <i>Learn More</i>
+              <img
+                src="./images/our-courses/arrow-right.svg"
+                alt="right arrow"
+                class=""
+              />
+            </button>
+          </div>
         </div>
-    </section>
-    <header>
-        <h1>LEARN FULL-STACK WEB DEVELOPMENT</h1>
-        <h2>OUR COURSES</h2>
-    </header>
-    
-    <section class="course-info">
-        <button>
-        <div class="course-info">
-            <div class="sub-title">Beginner: Lifetime Access</div>
-            <p>For you to start your coding journey from scratch</p>
-            <div class="details">
-                <input type="checkbox" class="checkbox" checked>100% Job Guarantee<br>
-                <p>Placement Starts: in 4 Months</p>
-                <p>Eligibility: Final year students or Graduates, All degrees</p>
-                <p>Duration: 12 Months</p>
-                <p>Daily Effort: 5-7 hours</p>
-                <p>Next Batch On: 27th Dec 2022</p>
-            </div>
-            <a href="#" class="button">Brochure</a>
-            <a href="#" class="button">Learn More</a>
-        </div>
-        </button>
-        <button>
-            <div class="sub-title">Intermediate: Pay After Placement</div>
-            <p>For individuals with good aptitude & local resources</p>
-            <div class="details">
-                <input type="checkbox" class="checkbox" checked>Placement Starts: in 6 Months<br>
-                <p>Eligibility: 2019-2023 Batch students, All Degrees</p>
-                <p>Duration: 10 Months</p>
-                <p>Daily Effort: 8-10 hours</p>
-                <p>Next Batch On: 27th Dec 2022</p>
-            </div>
-            <a href="#" class="button">Brochure</a>
-            <a href="#" class="button">Learn More</a>
-    </button>
-    </section>
 
-    <header>
-        <h1>OVER 300 HIRING PARTNERS</h1>
-        <h2>Top Startups & MNC's Hire Software Engineer</h2>
-    </header>
-    
-    <section>
-        <div class="partner-info">
-            <div class="title">From Acciolob up to 41 Lakhs</div>
-            <ul class="partners-list">
-                <li><a href="#" class="partner-link">Amazon</a></li>
-                <li><a href="#" class="partner-link">Thoughtworks</a></li>
-                <li><a href="#" class="partner-link">TATA DIGITAL</a></li>
-                <li><a href="#" class="partner-link">Bharat Pe</a></li>
-                <li><a href="#" class="partner-link">MAERSK</a></li>
-                <li><a href="#" class="partner-link">Innovaccer</a></li>
-                <li><a href="#" class="partner-link">Freecharge</a></li>
-                <li><a href="#" class="partner-link">Walmart</a></li>
-                <li><a href="#" class="partner-link">Make Trip</a></li>
-                <li><a href="#" class="partner-link">Paytm</a></li>
-                <li><a href="#" class="partner-link">Publicis Sapient</a></li>
-                <li><a href="#" class="partner-link">HSBC</a></li>
-                <li><a href="#" class="partner-link">Mini@range</a></li>
-                <li><a href="#" class="partner-link">Pay Glocal</a></li>
-                <li><a href="#" class="partner-link">MYSTIFLY</a></li>
-                <li><a href="#" class="partner-link">@converj</a></li>
-                <li><a href="#" class="partner-link">Cadence</a></li>
-            </ul>
-            <a href="#" class="button">Placement Report</a>
+        <div class="intermediate-card course-card mt-3">
+          <div class="d-flex align-items-center justify-content-center">
+            <img
+              src="./images/our-courses/intermediate.svg"
+              alt="intermediate"
+            />
+            <h1 class="m-1">Intermediate</h1>
+          </div>
+          <div
+            class="course-card-pills d-flex align-items-center justify-content-center my-2"
+          >
+            <div class="mx-2">Pay After Placement</div>
+            <div class="mx-2">Lifetime Access</div>
+          </div>
+          <div class="course-card-msg">
+            <p>For learners with good aptitude & logical reasoning</p>
+          </div>
+
+          <table class="table course-card-table mb-4">
+            <tr>
+              <td>
+                <img
+                  class="me-2"
+                  src="./images/our-courses/suitcase.svg"
+                  alt="suitcase"
+                />
+                Placement Starts
+              </td>
+              <td><i>in 6 Months</i></td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  class="me-2"
+                  src="./images/our-courses/mdi_graduation-cap-outline.svg"
+                  alt="cap"
+                />
+                Eligibility
+              </td>
+              <td><i>2019-2023 Batch students, All Degrees </i></td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  class="me-2"
+                  src="./images/our-courses/clocke.svg"
+                  alt="clock"
+                />
+                Duration
+              </td>
+              <td><i>10 Months</i></td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  class="me-2"
+                  src="./images/our-courses/diarye.svg"
+                  alt="study"
+                />
+                Daily Effort
+              </td>
+              <td><i>8-10 hours</i></td>
+            </tr>
+            <tr class="last-row">
+              <td>
+                <img
+                  class="me-2"
+                  src="./images/our-courses/material-symbols_skip-next-outline.svg"
+                  alt="play-pause"
+                />
+                Next Batch On
+              </td>
+              <td><i>27th Dec 2022</i></td>
+            </tr>
+          </table>
+
+          <div
+            class="button-container d-flex align-items-center justify-content-center"
+          >
+            <button class="btn btn-outline-primary">
+              <img
+                src="./images/our-courses/downloade.svg"
+                alt="download"
+                class="me-2"
+              />
+              <i>Brochure</i>
+            </button>
+            <button class="btn btn-primary border-0">
+              <i>Learn More</i>
+              <img
+                src="./images/our-courses/arrow-right.svg"
+                alt="right arrow"
+                class=""
+              />
+            </button>
+          </div>
         </div>
+      </div>
     </section>
-    <header>
+    <main>
+      <section class="hiring-partners-section text-center">
+        <p class="section-header-p">Over 300+ hiring partners</p>
+        <h1>
+          Top Startups & MNC’s Hire <br /><span> Software Engineer </span>
+        </h1>
+        <h5>From Acciojob upto 41 Lakhs</h5>
+        <marquee direction="right">
+          <div class="companies-row my-row-a">
+            <div>
+              <img
+                src="./images/hiring-partners/row-a/row-a (1).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-a/row-a (2).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-a/row-a (3).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-a/row-a (4).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-a/row-a (5).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-a/row-a (6).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-a/row-a (1).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-a/row-a (2).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-a/row-a (3).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-a/row-a (4).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-a/row-a (5).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-a/row-a (6).png"
+                alt="company-logo"
+              />
+            </div></div
+        ></marquee>
+
+        <marquee direction="left">
+          <div class="companies-row my-row-b">
+            <div>
+              <img
+                src="./images/hiring-partners/row-b/row-b (1).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-b/row-b (2).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-b/row-b (3).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-b/row-b (4).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-b/row-b (5).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-b/row-b (6).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-b/row-b (1).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-b/row-b (2).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-b/row-b (3).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-b/row-b (4).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-b/row-b (5).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-b/row-b (6).png"
+                alt="company-logo"
+              />
+            </div></div
+        ></marquee>
+
+        <marquee direction="right">
+          <div class="companies-row my-row-b">
+            <div>
+              <img
+                src="./images/hiring-partners/row-c/row-c (1).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-c/row-c (2).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-c/row-c (3).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-c/row-c (4).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-c/row-c (5).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-c/row-c (6).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-c/row-c (1).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-c/row-c (2).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-c/row-c (3).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-c/row-c (4).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-c/row-c (5).png"
+                alt="company-logo"
+              />
+            </div>
+            <div>
+              <img
+                src="./images/hiring-partners/row-c/row-c (6).png"
+                alt="company-logo"
+              />
+            </div></div
+        ></marquee>
+
+        <button type="button" class="report-btn btn btn-primary">
+          Placement Report
+          <img src="./images/hero/arrow-right.svg" alt="arrow right" />
+        </button>
+      </section>
+      <section class="feedback">
         <h1>AccioJob Wall Of Love</h1>
-        <h2>Our Alumni Say it Best</h2>
-    </header>
-    
-    <section class="testimonial">
+        <p>Our Alumni Say it Best</p>
 
-        <div class="testimonial">
-            <button>
-            <div class="name"><b>Virat Kohli</b></div>
-            <div class="position">SDE-I at Indian Cricket Board</div>
-            <p class="quote">"My life changed when I became a part of the<br> AccioJob family.Before that, I was not able to<br> score any centuries. As soon as I joined Accio,<br> I hit a century against Afghanistan."</p>
-            </button>
+        <div class="review-box-container">
+          <div class="review-box-col d-flex flex-column">
+            <div class="review-box">
+              <div class="cust-details">
+                <div class="cust-img me-3">
+                  <img
+                    src="./images/feedback/cust-img (1).svg"
+                    alt="cust-img"
+                  />
+                </div>
+                <div
+                  class="cust-name d-flex flex-column justify-content-center"
+                >
+                  <h4>Virat Kohli</h4>
+                  <h5>SDE-II at Indian Cricket Board</h5>
+                </div>
+              </div>
+              <img
+                class="social-link"
+                src="./images/feedback/LinkedIN.svg"
+                alt="linkedin"
+              />
+              <div class="cust-para my-3">
+                <p>
+                  My Life changed when I became a part of the AccioJob family.
+                  Before that I was not able to score any centuries. As soon as
+                  I joined Accio, I hit a century against Afganistan.
+                </p>
+              </div>
+              <div class="date">Jun 14, 2022</div>
+            </div>
 
-            <button>
-                <div class="name"><b>Ishan Kishan</b></div>
-                <div class="position">Intern at indian Cricket Board</div>
-                <p class="quote">"My life changed when I became a part of the<br> AccioJob family.Before that, I was not able to<br> score any centuries. As soon as I joined Accio,<br> I hit a century against Afghanistan.My life changed<br> when I became a part of the AccioJob family.<br>Before that, I was not able to score any centuries.<br> As soon as I joined Accio, I hit a century against <br>Afghanistan."</p>
-            </button>
+            <div class="review-box">
+              <div class="cust-details">
+                <div class="cust-img me-3">
+                  <img
+                    src="./images/feedback/cust-img (2).svg"
+                    alt="cust-img"
+                  />
+                </div>
+                <div
+                  class="cust-name d-flex flex-column justify-content-center"
+                >
+                  <h4>Rohit Sharma</h4>
+                  <h5>Intern at Indian Cricket Board</h5>
+                </div>
+              </div>
+              <img
+                class="social-link"
+                src="./images/feedback/LinkedIN.svg"
+                alt="linkedin"
+              />
+              <div class="cust-para my-3">
+                <p>
+                  My Life changed when I became a part of the AccioJob family.
+                  Before that I was not able to score any centuries. As soon as
+                  I joined Accio, I hit a century against Afganistan. Then I got
+                  offers from RCB for IPL as captain again. Bas ab India World
+                  Cup Jeet jaye.
+                </p>
+              </div>
+              <div class="date">Jun 14, 2022</div>
+            </div>
+          </div>
 
-            <button>
-                <div class="name"><b>Virender Sehwag</b></div>
-                <div class="position">SDE-IV at Indian Cricket Board</div>
-                <p class="quote">"My life changed when I became a part of the<br> AccioJob family.Before that, I was not able to<br> score any centuries. As soon as I joined Accio,<br> I hit a century against Afghanistan. Then I got<br> offers from RCB for IPL as captain again. Bas<br> ab India World Cup jeet jaye".</p>
-            </button>
-            <br>
-            <button>
-                <div class="name"><b>Rohit Sharma</b></div>
-                <div class="position">ISDE-I at Indian Cricket Board</div>
-                <p class="quote">"My life changed when I became a part of the<br> AccioJob family.Before that, I was not able to<br> score any centuries. As soon as I joined Accio,<br> I hit a century against Afghanistan. Then I got<br> offers from RCB for IPL as captain again. Bas<br> ab India World Cup jeet jaye".</p>
-            </button>
+          <div class="review-box-col d-flex flex-column">
+            <div class="review-box">
+              <div class="cust-details">
+                <div class="cust-img me-3">
+                  <img
+                    src="./images/feedback/cust-img (3).svg"
+                    alt="cust-img"
+                  />
+                </div>
+                <div
+                  class="cust-name d-flex flex-column justify-content-center"
+                >
+                  <h4>Ishan Kishan</h4>
+                  <h5>Intern at Indian Cricket Board</h5>
+                </div>
+              </div>
+              <img
+                class="social-link"
+                src="./images/feedback/Quora.svg"
+                alt="Quora"
+              />
+              <div class="cust-para my-3">
+                <p>
+                  My Life changed when I became a part of the AccioJob family.
+                  Before that I was not able to score any centuries. As soon as
+                  I joined Accio, I hit a century against Afg anistan. My Life
+                  changed when I became a part of the AccioJob family. Before
+                  that I was not able to score any centuries. As soon as I
+                  joined Accio, I hit a century against Afganistan.
+                </p>
+              </div>
+              <div class="date">Jun 14, 2022</div>
+            </div>
 
-            <button>
-                <div class="name"><b>Sarfaraz Ahmed</b></div>
-                <div class="position">Wk at pak. Cricket Board </div>
-                <p class="quote">"Inshallah Boys played well. My answer also same<br>Inshallah Boys! Well Done!"</p>
-            </button>
+            <div class="review-box">
+              <div class="cust-details">
+                <div class="cust-img me-3">
+                  <img
+                    src="./images/feedback/cust-img (4).svg"
+                    alt="cust-img"
+                  />
+                </div>
+                <div
+                  class="cust-name d-flex flex-column justify-content-center"
+                >
+                  <h4>Sarfaraz Ahmed</h4>
+                  <h5>WK at Pak. Cricket Board</h5>
+                </div>
+              </div>
+              <img
+                class="social-link"
+                src="./images/feedback/LinkedIN.svg"
+                alt="linkedin"
+              />
+              <div class="cust-para my-3">
+                <p>
+                  Inshallah Boys Played well. My answer also same Inshallah
+                  Boys! Well done!
+                </p>
+              </div>
+              <div class="date">Jun 14, 2022</div>
+            </div>
+          </div>
 
-            <button>
-                    <div class="name"><b>Sachin Tendulkar</b></div>
-                    <div class="position">God at Indian Cricket Board</div>
-                    <p class="quote">"My life changed when I became a part of the<br> AccioJob family.Before that, I was not able to<br> score any centuries. As soon as I joined Accio,<br> I hit a century against Afghanistan. Then I got<br> offers from RCB for IPL as captain again. Bas<br> ab India World Cup jeet jaye".</p>
-            </button>
+          <div class="review-box-col d-flex flex-column">
+            <div class="review-box">
+              <div class="cust-details">
+                <div class="cust-img me-3">
+                  <img
+                    src="./images/feedback/cust-img (5).svg"
+                    alt="cust-img"
+                  />
+                </div>
+                <div
+                  class="cust-name d-flex flex-column justify-content-center"
+                >
+                  <h4>Virender Sehwag</h4>
+                  <h5>SDE-IV at Indian Cricket Board</h5>
+                </div>
+              </div>
+              <img
+                class="social-link"
+                src="./images/feedback/LinkedIN.svg"
+                alt="linkedin"
+              />
+              <div class="cust-para my-3">
+                <p>
+                  My Life changed when I became a part of the AccioJob family.
+                  Before that I was not able to score any centuries. As soon as
+                  I joined Accio, I hit a century against Afganistan. Then I got
+                  offers from RCB for IPL as captain again. Bas ab India World
+                  Cup Jeet jaye.
+                </p>
+              </div>
+              <div class="date">Jun 14, 2022</div>
+            </div>
+
+            <div class="review-box">
+              <div class="cust-details">
+                <div class="cust-img me-3">
+                  <img
+                    src="./images/feedback/cust-img (1).svg"
+                    alt="cust-img"
+                  />
+                </div>
+                <div
+                  class="cust-name d-flex flex-column justify-content-center"
+                >
+                  <h4>Sachin Tendulkar</h4>
+                  <h5>God at Indian Cricket Board</h5>
+                </div>
+              </div>
+              <img
+                class="social-link"
+                src="./images/feedback/LinkedIN.svg"
+                alt="linkedin"
+              />
+              <div class="cust-para my-3">
+                <p>
+                  My Life changed when I became a part of the AccioJob family.
+                  Before that I was not able to score any centuries. As soon as
+                  I joined Accio, I hit a century against Afganistan.
+                </p>
+              </div>
+              <div class="date">Jun 14, 2022</div>
+            </div>
+          </div>
         </div>
-    
-    </section>
-    
-</body>
+      </section>
+    </main>
+
+    <!-- link bootstrap-js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    <!-- ------------------------ -->
+  </body>
 </html>
